@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Enfes |Yemek| Tarifler</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+    </h:head>
+    <h:body>
+       
+        <div>
+            <h3>Tarif Ekle</h3>
+            <f:view contentType="text/html">
+        <h:form prependId="false" enctype="multipart/form-data">
+         
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Tarif Adı:"/>
+                <h:inputText id="tarif_adi" value="#{tarifler.tarif_adi}" immediate="true"/>
+                
+                <h:outputLabel value="Tarif İçeriği:"/> 
+                <h:inputTextarea id="tarif_icerik" value="#{tarifler.tarif_icerik}" immediate="true"/>
+                
+                <h:outputLabel value="Tarif Fotoğrafı:" />
+                <h:inputText id="tarif_img" value="#{tarifler.tarif_img}" immediate="true"/>
+                <h:outputLabel value="Tarif Katagori"/>
+                <h:selectOneMenu id="tarif_kategori" value="#{tarifler.tarif_kategori}"> 
+                    
+                           <f:selectItem itemValue = "Kahvaltı Çeşitleri" itemLabel = "Kahvaltı Çeşitleri" /> 
+                           <f:selectItem itemValue = "Diyet Yemekleri" itemLabel = "Diyet Yemekleri" /> 
+                           <f:selectItem itemValue = "Makarnalar" itemLabel = "Makarnalar" /> 
+                           <f:selectItem itemValue = "Balıklar" itemLabel = "Balıklar" /> 
+                           <f:selectItem itemValue = "Et Yemekleri" itemLabel = "Et Yemekleri" /> 
+                           <f:selectItem itemValue = "Pizzalar" itemLabel = "Pizzalar" /> 
+                           <f:selectItem itemValue = "Hamburgerler" itemLabel = "Hamburgerler" /> 
+
+                </h:selectOneMenu> 	
+                
+                
+                <h:commandButton value = "Kaydet" onclick = "alert('Tarif Başarıyla Eklendi!');" action="#{tarifler.testTest()}" />
+                
+                <h:commandButton value = "Ana Sayfaya Git" action="index.xhtml" />
+            </h:panelGrid>
+             
+         </h:form>
+            </f:view>
+        </div>
+    </h:body>
+    
+</html>
